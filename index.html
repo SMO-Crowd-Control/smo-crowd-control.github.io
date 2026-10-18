@@ -1,3 +1,440 @@
-<body>
-    <p>Hello World</p>
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Mario Odyssey - Crowd Control Mod | Official Landing Page</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        twitch: {
+                            DEFAULT: '#9146FF',
+                            dark: '#6441A5',
+                            light: '#A970FF',
+                            bg: '#0F0E13',
+                            card: '#181622',
+                            border: '#2D283E',
+                            subtle: '#262135'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0F0E13;
+            color: #EFEFF1;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0F0E13;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2D283E;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #9146FF;
+        }
+
+        .card-border {
+            border: 1px solid #2D283E;
+        }
+
+        .card-border:hover {
+            border-color: #9146FF;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-twitch selection:text-white">
+
+    <!-- Header Navigation -->
+    <nav class="sticky top-0 z-50 bg-twitch-bg/95 border-b border-twitch-border backdrop-blur px-4 lg:px-8 py-3.5">
+        <div class="max-w-6xl mx-auto flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3">
+                <img 
+                    src="https://avatars.githubusercontent.com/u/344284789?s=200&v=4" 
+                    alt="SMO Crowd Control Logo" 
+                    class="w-9 h-9 rounded-lg object-cover"
+                />
+                <div>
+                    <span class="font-bold text-base text-white tracking-tight block leading-none">SMO Crowd Control</span>
+                    <span class="text-xs text-gray-400">By The CC Team</span>
+                </div>
+            </a>
+
+            <div class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-300">
+                <a href="#about" class="hover:text-twitch-light transition-colors">About</a>
+                <a href="#Events" class="hover:text-twitch-light transition-colors">Mod Events</a>
+                <a href="#setup" class="hover:text-twitch-light transition-colors">Setup Guide</a>
+                <a href="#download" class="hover:text-twitch-light transition-colors">Download</a>
+                <a href="#team" class="hover:text-twitch-light transition-colors">The CC Team</a>
+                <a href="#faq" class="hover:text-twitch-light transition-colors">FAQ</a>
+            </div>
+
+            <div class="flex items-center gap-3">
+                <a href="#download" class="px-4 py-2 rounded-lg text-sm font-semibold bg-twitch hover:bg-twitch-dark text-white transition-all flex items-center gap-2">
+                    <i class="fa-solid fa-download text-xs"></i> Get Mod
+                </a>
+                <button id="mobile-menu-btn" class="md:hidden text-xl text-gray-300 p-1 focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden pt-4 pb-2 px-2 flex flex-col gap-2 text-sm border-t border-twitch-border mt-3">
+            <a href="#about" class="py-1.5 text-gray-300 hover:text-white">About</a>
+            <a href="#Events" class="py-1.5 text-gray-300 hover:text-white">Mod Events</a>
+            <a href="#setup" class="py-1.5 text-gray-300 hover:text-white">Setup Guide</a>
+            <a href="#download" class="py-1.5 text-gray-300 hover:text-white">Download</a>
+            <a href="#team" class="py-1.5 text-gray-300 hover:text-white">The CC Team</a>
+            <a href="#faq" class="py-1.5 text-gray-300 hover:text-white">FAQ</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="py-16 md:py-24 border-b border-twitch-border bg-gradient-to-b from-twitch-subtle/30 to-transparent">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-twitch-card border border-twitch-border text-twitch-light text-xs font-medium mb-6">
+                <span class="w-2 h-2 rounded-full bg-twitch"></span> Super Mario Odyssey Interactive Mod
+            </div>
+
+            <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight mb-6">
+                Let your Twitch viewers control Super Mario Odyssey in real-time
+            </h1>
+
+            <p class="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto mb-8 leading-relaxed">
+                Connect Super Mario Odyssey to Crowd Control. Allow your stream viewers to spend Channel Points to trigger in-game Events, and alter gameplay live.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+                <a href="https://discord.gg/4rK7TpA7Vu" class="w-full sm:w-auto px-6 py-3 rounded-lg font-semibold bg-twitch hover:bg-twitch-dark text-white transition-all flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-discord"></i> Join the Discord
+                </a>
+                <a href="#setup" class="w-full sm:w-auto px-6 py-3 rounded-lg font-semibold bg-twitch-card hover:bg-twitch-border text-gray-200 transition-all text-center border border-twitch-border flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-book"></i> Setup Instructions
+                </a>
+            </div>
+
+            <!-- Technical Notice -->
+            <div class="mt-8 pt-6 border-t border-twitch-border/60 max-w-xl mx-auto text-xs text-gray-400 flex items-center justify-center gap-2">
+                <i class="fa-solid fa-circle-info text-twitch-light"></i>
+                Requires a modded Nintendo Switch (Atmosphere) or Ryujinx.
+            </div>
+        </div>
+    </header>
+
+    <!-- Overview & Compatibility -->
+    <section id="about" class="py-16 border-b border-twitch-border">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <div class="bg-twitch-card p-6 rounded-xl card-border">
+                    <div class="w-10 h-10 rounded-lg bg-twitch/20 text-twitch-light flex items-center justify-center text-lg mb-4">
+                        <i class="fa-brands fa-twitch"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Twitch Native</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Integrates via our own Control Panl, connected directly to your twitch account. Users can use their Channel Points to buy in-game events.
+                    </p>
+                </div>
+
+                <div class="bg-twitch-card p-6 rounded-xl card-border">
+                    <div class="w-10 h-10 rounded-lg bg-twitch/20 text-twitch-light flex items-center justify-center text-lg mb-4">
+                        <i class="fa-solid fa-sliders"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Fully Customisable</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Configure effect prices, cooldowns, durations, to ensure the best live ever !
+                    </p>
+                </div>
+
+                <div class="bg-twitch-card p-6 rounded-xl card-border">
+                    <div class="w-10 h-10 rounded-lg bg-twitch/20 text-twitch-light flex items-center justify-center text-lg mb-4">
+                        <i class="fa-solid fa-microchip"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Platform Support</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Compatible with Nintendo Switch 1 running Atmosphere CFW, as well as Ryujinx and Yuzu.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Events List Section -->
+    <section id="Events" class="py-16 border-b border-twitch-border bg-twitch-card/40">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="mb-10">
+                <h2 class="text-2xl sm:text-3xl font-bold text-white">Mod Events</h2>
+                <p class="text-sm text-gray-400 mt-1">Available triggers mapped to game memory hooks.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                
+                <!-- Category 1 -->
+                <div class="bg-twitch-card p-5 rounded-xl border border-twitch-border">
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li class="flex items-center justify-between border-b border-twitch-border/40 pb-1.5">
+                            <span>Jump</span>
+                            <span class="text-xs text-gray-500 font-mono">Instant</span>
+                        </li>
+                        <li class="flex items-center justify-between border-b border-twitch-border/40 pb-1.5">
+                            <span>Throw Cappy</span>
+                            <span class="text-xs text-gray-500 font-mono">Instant</span>
+                        </li>
+                        <li class="flex items-center justify-between border-b border-twitch-border/40 pb-1.5">
+                            <span>Crouch</span>
+                            <span class="text-xs text-gray-500 font-mono">Instant</span>
+                        </li>
+                        <li class="flex items-center justify-between border-b border-twitch-border/40 pb-1.5">
+                            <span>One heart</span>
+                            <span class="text-xs text-gray-500 font-mono">Timed</span>
+                        </li>
+                        <li class="flex items-center justify-between border-b border-twitch-border/40 pb-1.5">
+                            <span>Auto Jump</span>
+                            <span class="text-xs text-gray-500 font-mono">Timed</span>
+                        </li>
+                        <li class="flex items-center justify-between">
+                            <span>Disable Jump</span>
+                            <span class="text-xs text-gray-500 font-mono">Timed</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Category 2 -->
+                <div class="bg-twitch-card p-5 rounded-xl border border-twitch-border">
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li class="flex items-center justify-between border-b border-twitch-border/40 pb-1.5">
+                            <span>Invincible</span>
+                            <span class="text-xs text-gray-500 font-mono">Timed</span>
+                        </li>
+                        <li class="flex items-center justify-between border-b border-twitch-border/40 pb-1.5">
+                            <span>Kill Mario</span>
+                            <span class="text-xs text-gray-500 font-mono">Instant</span>
+                        </li>
+                        <li class="flex items-center justify-between border-b border-twitch-border/40 pb-1.5">
+                            <span>Give / Remove Coins</span>
+                            <span class="text-xs text-gray-500 font-mono">Instant, Amount</span>
+                        </li>
+                        <li class="flex items-center justify-between border-b border-twitch-border/40 pb-1.5">
+                            <span>Gift / Steal Moon</span>
+                            <span class="text-xs text-gray-500 font-mono">Instant, Amount</span>
+                        </li>
+                        <li class="flex items-center justify-between border-b border-twitch-border/40 pb-1.5">
+                            <span>Moon Gravity</span>
+                            <span class="text-xs text-gray-500 font-mono">Timed</span>
+                        </li>
+                        <li class="flex items-center justify-between">
+                            <span>No Oxygen</span>
+                            <span class="text-xs text-gray-500 font-mono">Timed</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Category 3 -->
+                <div class="bg-twitch-card p-5 rounded-xl border border-twitch-border">
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li class="flex items-center justify-between border-b border-twitch-border/40 pb-1.5">
+                            <span>Random Gravity</span>
+                            <span class="text-xs text-gray-500 font-mono">Timed</span>
+                        </li>
+                        <li class="flex items-center justify-between border-b border-twitch-border/40 pb-1.5">
+                            <span>First Person</span>
+                            <span class="text-xs text-gray-500 font-mono">Timed</span>
+                        </li>
+                        <li class="flex items-center justify-between border-b border-twitch-border/40 pb-1.5">
+                            <span>Upcoming</span>
+                            <span class="text-xs text-gray-500 font-mono">Upcoming</span>
+                        </li>
+                        <li class="flex items-center justify-between border-b border-twitch-border/40 pb-1.5">
+                            <span>Upcoming</span>
+                            <span class="text-xs text-gray-500 font-mono">Upcoming</span>
+                        </li>
+                        <li class="flex items-center justify-between border-b border-twitch-border/40 pb-1.5">
+                            <span>Upcoming</span>
+                            <span class="text-xs text-gray-500 font-mono">Upcoming</span>
+                        </li>
+                        <li class="flex items-center justify-between">
+                            <span>Upcoming</span>
+                            <span class="text-xs text-gray-500 font-mono">Upcoming</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Setup Guide Section -->
+    <section id="setup" class="py-16 border-b border-twitch-border">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="mb-10">
+                <h2 class="text-2xl sm:text-3xl font-bold text-white">Installation & Setup</h2>
+                <p class="text-sm text-gray-400 mt-1">Follow these steps to connect your game to your stream.</p>
+            </div>
+
+            <div class="space-y-4">
+                <div class="bg-twitch-card p-5 rounded-xl border border-twitch-border flex items-start gap-4">
+                    <div class="w-8 h-8 rounded-lg bg-twitch text-white font-bold text-sm flex items-center justify-center shrink-0 mt-0.5">1</div>
+                    <div class="text-sm">
+                        <h3 class="font-bold text-white text-base mb-1">Launch Crowd Control Panel</h3>
+                        <p class="text-gray-400 leading-relaxed">Download and launch the Control Panel on your PC. Connect your Twitch account to enable viewer integration.</p>
+                    </div>
+                </div>
+
+                <div class="bg-twitch-card p-5 rounded-xl border border-twitch-border flex items-start gap-4">
+                    <div class="w-8 h-8 rounded-lg bg-twitch text-white font-bold text-sm flex items-center justify-center shrink-0 mt-0.5">2</div>
+                    <div class="text-sm">
+                        <h3 class="font-bold text-white text-base mb-1">Place Mod Files on SD Card or Emulator</h3>
+                        <p class="text-gray-400 leading-relaxed">Download the SMO Crowd Control mod. Copy the <code class="bg-twitch-bg px-1.5 py-0.5 rounded text-twitch-light font-mono text-xs">atmosphere/</code> folder to your Nintendo Switch SD card root, or import the contents into your emulator's mod directory.</p>
+                    </div>
+                </div>
+
+                <div class="bg-twitch-card p-5 rounded-xl border border-twitch-border flex items-start gap-4">
+                    <div class="w-8 h-8 rounded-lg bg-twitch text-white font-bold text-sm flex items-center justify-center shrink-0 mt-0.5">3</div>
+                    <div class="text-sm">
+                        <h3 class="font-bold text-white text-base mb-1">Establish Connection</h3>
+                        <p class="text-gray-400 leading-relaxed">Launch Super Mario Odyssey (v1.0.0). In the Crowd Control PC client, input your console IP address, and start your session.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download / Community Section -->
+    <section id="download" class="py-16 bg-twitch-card/20 border-b border-twitch-border">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-2xl sm:text-3xl font-bold text-white mb-3">Get Started & Join Community</h2>
+            <p class="text-sm text-gray-400 max-w-lg mx-auto mb-6">Join our Discord server to get the latest mod build, setup guides, and direct support from The CC Team</p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+                <a href="https://discord.gg/4rK7TpA7Vu" class="w-full sm:w-auto px-6 py-3 rounded-lg font-semibold bg-twitch hover:bg-twitch-dark text-white transition-all flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-discord"></i> Join the Discord
+                </a>
+                <a href="https://github.com/SMO-Crowd-Control/SMO-Crowd-Control-mod" target="_blank" class="w-full sm:w-auto px-6 py-3 rounded-lg font-semibold bg-twitch-card hover:bg-twitch-border text-gray-300 border border-twitch-border transition-all flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-github"></i> View on GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="py-16 border-b border-twitch-border">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="mb-10">
+                <h2 class="text-2xl sm:text-3xl font-bold text-white">The CC Team</h2>
+                <p class="text-sm text-gray-400 mt-1">SMO modders, developers of the Crowd Control mod.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                <div class="bg-twitch-card p-6 rounded-xl border border-twitch-border flex flex-col items-center text-center">
+                    <img 
+                        src="https://cdn.discordapp.com/avatars/1197240047448113203/4b11350aecd867c880626cf19831df76.webp?size=256" 
+                        alt="WibiDev" 
+                        class="w-24 h-24 rounded-full border-2 border-twitch object-cover mb-4 shadow-md"
+                    />
+                    <div class="font-bold text-white text-base">WibiDev</div>
+                    <div class="text-xs text-twitch-light mb-2">Icons & Code</div>
+                    <p class="text-xs text-gray-400">Icon sprites, layout logic, events</p>
+                </div>
+
+                <div class="bg-twitch-card p-6 rounded-xl border border-twitch-border flex flex-col items-center text-center">
+                    <img 
+                        src="https://cdn.discordapp.com/avatars/1256307773290053716/aa7853eeb257ce9328de62148e30a17b.webp?size=256" 
+                        alt="Zyric02" 
+                        class="w-24 h-24 rounded-full border-2 border-twitch object-cover mb-4 shadow-md"
+                    />
+                    <div class="font-bold text-white text-base">Zyric02</div>
+                    <div class="text-xs text-twitch-light mb-2">Mod Logic & Online Mode</div>
+                    <p class="text-xs text-gray-400">Online mode, fundamental logic, events</p>
+                </div>
+
+                <div class="bg-twitch-card p-6 rounded-xl border border-twitch-border flex flex-col items-center text-center">
+                    <img 
+                        src="https://cdn.discordapp.com/avatars/1236553493569867886/dfc4f7f1f19f82d7dfcb0e1364297750.webp?size=256" 
+                        alt="Growl-smo" 
+                        class="w-24 h-24 rounded-full border-2 border-twitch object-cover mb-4 shadow-md"
+                    />
+                    <div class="font-bold text-white text-base">Growl-smo</div>
+                    <div class="text-xs text-twitch-light mb-2">Network System & Code</div>
+                    <p class="text-xs text-gray-400">Control panel, fundamental logic, events</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-16 border-b border-twitch-border bg-twitch-card/30">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="mb-10">
+                <h2 class="text-2xl sm:text-3xl font-bold text-white">Frequently Asked Questions</h2>
+                <p class="text-sm text-gray-400 mt-1">Technical requirements and common issues.</p>
+            </div>
+
+            <div class="space-y-4">
+                <div class="bg-twitch-card p-5 rounded-xl border border-twitch-border">
+                    <h3 class="font-semibold text-white text-sm mb-1">Do I need a hacked Nintendo Switch?</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">Yes, if playing on hardware, your console must run Atmosphère custom firmware to load memory patches and communicate with the network client. Alternatively, you can use a PC emulator like Ryujinx.</p>
+                </div>
+
+                <div class="bg-twitch-card p-5 rounded-xl border border-twitch-border">
+                    <h3 class="font-semibold text-white text-sm mb-1">Is this mod affiliated with Nintendo?</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">No. This is an open-source fan project developed by independent modders for community use. It is not endorsed by or affiliated with Nintendo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-twitch-bg border-t border-twitch-border py-8 text-xs text-gray-400">
+        <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div>
+                <p class="font-semibold text-gray-300">Super Mario Odyssey Crowd Control Mod</p>
+                <p class="text-gray-500">Made by The CC Team</p>
+            </div>
+
+            <div class="flex items-center gap-4 text-gray-400">
+                <a href="#about" class="hover:text-white">About</a>
+                <a href="#Events" class="hover:text-white">Events</a>
+                <a href="#setup" class="hover:text-white">Setup</a>
+                <a href="#faq" class="hover:text-white">FAQ</a>
+            </div>
+
+            <div>
+                &copy; 2026 The CC Team - All right reserved
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle Mobile Menu
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
 </body>
+</html>
